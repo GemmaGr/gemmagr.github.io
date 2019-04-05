@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Title of the page, for search engines. -->
+  <title>Student Group Profiles</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+  <!-- Linking External CSS -->
+  <link rel="stylesheet" type="text/css" href="./css/myTheme.css">
+  <link rel="stylesheet" href="./css/w3.css">
+
+  <!-- this adds my downloaded jquery for use in this page -->
+  <script src="./javascript/jquery/jquery-3.3.1.js"></script>
+</head>
+
+<!-- HOME -->
+
+<body>
+  <!-- Banner Image -->
+  <img class="centerImg" src="./img/banner-img.png" alt="banner image"><br>
+
+
+
+  <!-- Navigation Bar (slides from left when 'Open' button clicked, with JavaScript) -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- this links to the side menu -->
+    <p class="menuFont">    Student Groups</p> <!-- title text on the side menu -->
+
+    <!-- link text side menu -->
+    <a href="index.html">Home</a>
+    <a href="cat.html">Cat Group</a>
+    <a href="hack.html">Hacker Group</a>
+    <a href="rpi.html">Raspberry Pi Group</a>
+    <a href="foods.html">Food Group</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+
+
+  <!-- Welcome message & Group paragraph -->
+  <h1 id="welcome-sliding" class="w3-center georgeFont">Welcome Students!</h1>  <!-- this content is hidden by default, due to code in the './css/myTheme.css' file -->
+  <p class="centerText georgeFont groupText">Welcome to Student Group Profiles, a site which hosts pages for student groups to advertise their selves to new potential members!</p><br>
+
+
+
+  <!-- All Groups Slideshow (start) -->
+  <div class="slideshow-container romeFont">
+    <div class="mySlides fade">
+      <div class="text centerBox">Cat Group</div>
+      <div class="numbertext centerBox">1 / 4</div>
+      <a href="cat.html"><img src="./img/cat-page-index-image.png" style="width:33.3%"></a>
+      <p class="centerText groupText">The Cat Group is for students who are interested in cats.</p>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="text centerBox">Hacker Group</div>
+      <div class="numbertext centerBox">2 / 4</div>
+      <a href="hack.html"><img src="./img/hack-page-index-image.png" style="width:33.3%"></a>
+      <p class="centerText groupText">The Hacker Group is for students who are interested in hacking.</p>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="text centerBox">Raspberry Pi Group</div>
+      <div class="numbertext centerBox">3 / 4</div>
+      <a href="rpi.html"><img src="./img/rpi-page-index-image.png" style="width:33.3%"></a>
+      <p class="centerText groupText">The Raspberry Pi Group is for students who are interested in Raspberry Pi computers.</p>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="text centerBox">Food Group</div>
+      <div class="numbertext centerBox">4 / 4</div>
+      <a href="foods.html"><img src="./img/food-page-index-image.jpg" style="width:33.3%"></a>
+      <p class="centerText groupText">The Food Group is for students who are interested in food and cooking.</p>
+    </div>
+  </div>
+  <!-- All Groups Slideshow (end) -->
+
+
+
+  <!-- this calls my javascript file -->
+  <script src="./javascript/myScript.js"></script>
+
+
+
+  <!-- JQuery -->
+  <script> 
+  $(function() { // when the document has finished loading 
+    $("#welcome-sliding").delay(0).slideDown(90); 
+    var iter; // declare the 'iter' variable
+    for (iter = 0; iter < 2; iter++) { // this holds true for 2 iterations
+      $("#welcome-sliding").delay(1).slideUp(90); // slide the HTML element with id 'welcome-sliding' up
+      $("#welcome-sliding").delay(1).slideDown(90); // slide the HTML element with id 'welcome-sliding' down
+    } 
+  }); 
+  </script> 
+
+</body>
+</html>

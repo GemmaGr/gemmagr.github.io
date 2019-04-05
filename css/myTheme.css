@@ -1,0 +1,184 @@
+body {
+  background-color: #CFE7F9;                                                                                                                       
+  color: #000000;
+}
+
+.georgeFont {
+  font-family: Georgia;
+}
+
+.romeFont {
+  font-family: "Times New Roman";
+}
+
+.menuFont {
+  font-family: "Times New Roman";
+  color: #bbbbbb;
+  text-align: center;
+  font-size: 14pt;
+  text-decoration: underline;
+}
+
+.centerImg {
+    text-align: left;
+    display: block;
+    margin: 0 auto;
+    width: 66.6666%;
+}
+
+/* 'hides' all 'mySlides' HTML class elements by default */
+.mySlides {
+  display: none;
+}
+
+.centerBox {
+    text-align: left;
+    display: block;
+    margin: 0 auto;
+    box-sizing: content-box;
+    width: 33.3333%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.centerText {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    box-sizing: content-box;
+    width: 33.3333%;
+}
+
+.centerGallery {
+    text-align: center;
+    display: block;
+    box-sizing: content-box;
+    width: 100%;
+    margin-left: 25.039%;
+}
+
+.text {
+  font-family: Courier;
+  color: #000000;
+  text-align: right;
+}
+	
+.numbertext {
+  font-family: Courier;
+  color: #000000;
+  text-align: right;
+}
+	
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+  color: #ff8787
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.slideshow-container {
+  text-align: center;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.botMarg {
+  margin-bottom: 10px;
+}
+
+.topMarg {
+  margin-top: 100px;
+}
+
+.groupText {
+  margin-bottom: 100px;
+}
+
+#welcome-sliding { /* Used to hide any element with this id, for JavaScript to slowly reveal it */
+  display:none;
+}
+
+
+
+/* JS Tabbed Image Gallery (start) */
+* {
+  box-sizing: border-box;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 16.6666%;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.6; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+/* JS Tabbed Image Gallery (end) */

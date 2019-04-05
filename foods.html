@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Title of the page, for search engines and so on. -->
+  <title>Student Group Profiles - Food Group</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+  <link rel="stylesheet" type="text/css" href="./css/myTheme.css">
+  <link rel="stylesheet" type="text/css" href="./css/lightbox.min.css">
+  <link rel="stylesheet" href="./css/w3.css">
+
+  <!-- Using locally stored javascript files -->
+  <script src="./javascript/myScript.js"></script>
+  <script src="./javascript/jquery/jquery-3.3.1.js"></script>
+  <script src="./javascript/jquery/lightbox-plus-jquery.min.js"></script>
+
+  <!--
+    JQUERY CODE TO FLASH 'id' TARGETED ELEMENTS AT VARYING SPEEDS
+
+      Some of the calculations and 'if' statements in the following
+       code are not needed. They could be pre-calculated. That may
+       perform marginally quicker, but this method demonstrates how
+       'if' statements and mathematical operators work in JavaScript;
+       and how mathematical operators can do mathematics for the coder.
+      For Example:
+      while (in_count <= 6) {
+        if (in_count == 4) {
+          $("#imageflasher").fadeIn(in_count ** 5 - 20);
+          $("#imageflasher").fadeOut(in_count ** 4 - 120);
+        }
+        in_count ++;
+      }
+      // Could ALL be replaced with:
+      $("#imageflasher").fadeIn(1004);
+      $("#imageflasher").fadeOut(136);
+  -->
+  <script src="./javascript/jquery/jquery.min.js"></script> <!-- get 'jquery.min.js' from google -->
+  <script>
+    $(function(){ // open jQuery function
+
+      // prevent infitity loop crashing
+      var external_count = 1;
+
+      // give the illusion of an infinite loop to visitors, but don't crash their browsers and/or devices
+      while (external_count <= 9000) {
+
+        // this will count the number of loops in the nested 'while'
+        var in_count = 1;
+
+        // while 'in_count' less than or equal to 6
+        while (in_count <= 6) {
+
+          // if 'in_count' equals 4, do the following
+          if (in_count == 4) {
+
+            // fade 'imageflasher' id element/s in at the speed of the number produced by ('in_count' to the power of 5) minus 20
+            $("#imageflasher").fadeIn(in_count ** 5 - 20);
+
+            // fade 'imageflasher' id element/s out at the speed of the number produced by ('in_count' to the power of 4) minus 20
+            $("#imageflasher").fadeOut(in_count ** 4 - 20);
+          }
+
+          // if 'in_count' equals 5, do the following
+          if (in_count == 5) {
+
+            // fade 'imageflasher' id element/s in at the speed of the number produced by ('in_count' to the power of 4) plus 700
+            $("#imageflasher").fadeIn(in_count ** 4 + 700);
+
+            // fade 'imageflasher' id element/s out at the speed of the number produced by ('in_count' to the power of 3) minus 20
+            $("#imageflasher").fadeOut(in_count ** 3 - 20);
+          }
+
+          // add one to the value of 'in_count' (increment)
+          in_count ++;
+
+        } // if 'in_count' is greater than 6, this should exit the while loop
+
+        // -> The line of code below seems to prevent an instant reset of the id element's 'display' to 'none'
+        // fade 'imageflasher' id element/s in at the speed of the number produced by ('in_count' to the power of 3) minus 320
+        $("#imageflasher").fadeIn(((in_count ** 3) * 2) - 320);
+
+        // The following is the delay between flash loops. It is randomised to create an illusion of some sort of intelligence.
+        // 'Math.random()' gives a random number between 0.0 and 1.0, here it is multiplied by 20000 and stored in the variable 'randPause'
+        var randPause = Math.random() * 20000;
+
+        // randPause should be greater than or equal to 0.33333 for this to be true, and the if-statements code within to be run
+        if (randPause >= 0.33333) {
+
+          // pause/delay 'imageflasher' id element/s between main loops for the duration of a (random number between 0.2 and 1.0) multiplied by 20000
+          //   The minimum resulting delay should be aproximately 6.666 seconds.
+          //   The maximum resulting delay should be 20 seconds.
+          $("#imageflasher").delay(randPause);
+        }
+        else { 
+          // if 'randPause' is less than 0.33333, default to pausing/delaying 'imageflasher' id element/s between main loops for 5 seconds
+          $("#imageflasher").delay(5000);
+        }
+
+        // add one to the value of 'external_count' (increment)
+        external_count ++;
+
+      } // if 'external_count' is over 9000, exit the while loop
+
+    }); // close jQuery function
+  </script>
+</head>
+
+<!-- PAGE: 'foods.html' -->
+
+<body>
+  <!-- Banner Image -->
+  <img class="centerImg" src="./img/banner-img.png" alt="banner image"><br>
+
+
+
+  <!-- Navigation Bar (slides from left when 'Open' button clicked, with JavaScript) -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- this links to the side menu -->
+    <p>    Menu</p>
+    <a href="index.html">Home</a>
+    <a href="cat.html">Cat Group</a>
+    <a href="hack.html">Hacker Group</a>
+    <a href="rpi.html">Raspberry Pi Group</a>
+    <a href="foods.html">Food Group</a>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  <br>
+  <br>
+  <br>
+
+
+
+  <!-- Main Group Image, Paragraph, and Meeting Times -->
+  <h1 class="centerText georgeFont">Food Group</h1><br>
+  <img src="./img/food-main-img.jpg" alt="Meal Image" class="centerBox" id="imageflasher"> <!-- This element is targeted for flashing, by JQuery in the 'head' -->
+  <br>
+  <br>
+  <p class="centerText georgeFont">The "Food Group" is a collection of students intereset in cooking and eating new foods.</p>
+  <br>
+  <p class="centerText georgeFont" size="66.6666%">Location:<br>Walsall College<br>Wisemore Campus<br>WS2 8ES<br>Room - A121<br><br>Meeting Times:<br>Mon-Fri 19:00 - 20:00<br>Sun 10:00 - 12:00</p>
+
+
+
+  <!-- Group Gallery (start) -->
+  <div class="centerText">
+    <h2 class="topMarg georgeFont">Group Image Gallery</h2>
+    <p class="georgeFont">This gallery contains images of some of the food students cooked and/or ate at Food Group.</p>
+    <em><p class="romeFont">- Click images to expand -</p></em>
+  </div>
+
+  <div class="centerGallery">
+    <!-- Three Columns (1) -->
+    <div class="row">
+      <div class="column">
+        <a href="./img/food-img-0.jpg" data-lightbox="mygallery"><img src="./img/food-img-0.jpg" alt="Spicy Wrap" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+      <div class="column">
+        <a href="./img/food-img-9.jpg" data-lightbox="mygallery"><img src="./img/food-img-9.jpg" alt="Food Buffet" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+      <div class="column">
+        <a href="./img/food-img-2.jpg" data-lightbox="mygallery"><img src="./img/food-img-2.jpg" alt="Vegetable Plate" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+    </div>
+
+    <!-- Three Columns (2) -->
+    <div class="row">
+      <div class="column">
+        <a href="./img/food-img-3.jpg" data-lightbox="mygallery"><img src="./img/food-img-3.jpg" alt="Grilled Chicken Dish" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+      <div class="column">
+        <a href="./img/food-img-5.jpg" data-lightbox="mygallery"><img src="./img/food-img-5.jpg" alt="Chicken Spinach Mixing" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+      <div class="column">
+        <a href="./img/food-img-8.jpg" data-lightbox="mygallery"><img src="./img/food-img-8.jpg" alt="Vegetables Pasta" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+    </div>
+
+    <!-- Three Columns (3) -->
+    <div class="row">
+      <div class="column">
+        <a href="./img/food-img-6.jpg" data-lightbox="mygallery"><img src="./img/food-img-6.jpg" alt="Seasoned Noodle Dish" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+      <div class="column">
+        <a href="./img/food-img-7.jpg" data-lightbox="mygallery"><img src="./img/food-img-7.jpg" alt="Packed Sandwiches with Chips" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+      <div class="column">
+        <a href="./img/food-img-10.jpg" data-lightbox="mygallery"><img src="./img/food-img-10.jpg" alt="Sliced Bread" style="width:100%" onclick="tabGallery(this);"></a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- Group Gallery (end) -->
+</body>
+</html>
